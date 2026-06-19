@@ -1,5 +1,7 @@
 # Text-to-Motion Research Survey
 
+**公開 URL:** https://yat0i811.github.io/Text-to-Motion-Research-Survey/
+
 テキストから人体モーションを生成する研究（2016〜2026年6月）を、**論文・データセット・ベンチマーク性能**の3軸で整理した Web アプリです。
 
 - 論文 **124本**（手法・データセット・サーベイ）
