@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text-to-Motion Research Survey（2016–2026）</title>
+<meta name="description" content="テキストから人体モーションを生成する研究（2016年〜2026年6月）のサーベイ。論文124本・データセット24種・HumanML3Dベンチマークをグラフで可視化。">
+<meta name="author" content="Text-to-Motion Research Survey">
+<meta name="last-modified" content="2026-06-19">
+<meta property="og:title" content="Text-to-Motion Research Survey（2016–2026）">
+<meta property="og:description" content="テキスト駆動の人体モーション生成研究を、論文・データセット・ベンチマーク性能の3軸で整理。">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <h1>Text-to-Motion Research<span class="dot">.</span></h1>
+    </div>
+    <nav>
+      <button class="active" onclick="showTab('overview', this)">概要</button>
+      <button onclick="showTab('papers', this)">論文</button>
+      <button onclick="showTab('datasets', this)">データセット</button>
+      <button onclick="showTab('performance', this)">性能比較</button>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- ===== OVERVIEW ===== -->
+<div id="tab-overview" class="tab-content active">
+  <p class="lead">
+    自然言語の指示から3次元の人体モーションを生成する研究を、<b>2016年〜2026年6月</b>にわたって整理しました。
+    VAE・GAN から拡散モデル、離散トークン自己回帰、マスク生成、大規模言語モデル、フローマッチングへ手法の変遷を、論文・データセット・ベンチマーク性能の3つの視点でたどれます。
+  </p>
+
+  <div class="stats-row">
+    <div class="stat-card"><div class="num" id="stat-papers">—</div><div class="label">収録論文</div></div>
+    <div class="stat-card"><div class="num" id="stat-datasets">—</div><div class="label">データセット</div></div>
+    <div class="stat-card"><div class="num" id="stat-models">—</div><div class="label">ベンチマーク評価モデル</div></div>
+    <div class="stat-card"><div class="num">11<span>年</span></div><div class="label">調査期間 (2016–2026)</div></div>
+  </div>
+
+  <div class="panel wide" style="margin-bottom:18px;">
+    <h3>年別の研究数</h3>
+    <div class="sub">モデル手法・データセット・サーベイの年次推移</div>
+    <div class="chart-box h-md"><canvas id="chart-timeline"></canvas></div>
+  </div>
+
+  <div class="charts-grid">
+    <div class="panel">
+      <h3>アプローチ別の研究数</h3>
+      <div class="sub">生成手法カテゴリの比較（多い順）</div>
+      <div class="chart-box h-md"><canvas id="chart-approach"></canvas></div>
+    </div>
+    <div class="panel">
+      <h3>発表会議・ジャーナル別</h3>
+      <div class="sub">主要な発表先（上位）</div>
+      <div class="chart-box h-md"><canvas id="chart-venue"></canvas></div>
+    </div>
+    <div class="panel wide">
+      <h3>年 × アプローチの研究トレンド</h3>
+      <div class="sub">拡散モデルから、マスク生成・LLM・フローマッチングへの多様化</div>
+      <div class="chart-box h-lg"><canvas id="chart-stacked"></canvas></div>
+    </div>
+  </div>
+
+  <div class="section-head"><h2>研究の3つのフェーズ</h2></div>
+  <div class="phase-grid">
+    <div class="phase-card" style="--c:#4e79a7;--c2:#4e79a7;">
+      <span class="tag">PHASE 01</span>
+      <h4>基礎期</h4>
+      <div class="period">2016 – 2022 ・ データセットと初期手法の確立</div>
+      <p>KIT（2016）や HumanML3D（CVPR 2022）といったテキスト対応データセットが整備された時期です。TEMOS・T2M などの VAE 系、CLIP 空間と整合する MotionCLIP、VQ で離散化する TM2T が登場し、MDM・MotionDiffuse が拡散モデルの先駆けとなりました。</p>
+    </div>
+    <div class="phase-card" style="--c:#59a14f;--c2:#59a14f;">
+      <span class="tag">PHASE 02</span>
+      <h4>拡散・離散化の興隆</h4>
+      <div class="period">2023 – 2024 ・ Diffusion と VQ-VAE の競演</div>
+      <p>拡散側を MLD（潜在拡散）・ReMoDiffuse（検索拡張）・OmniControl（関節制御）が、離散トークン側を T2M-GPT・MoMask・BAMM が牽引しました。MotionLCM がリアルタイム生成を実現し、MotionGPT によって大規模言語モデルとの統合も始まります。</p>
+    </div>
+    <div class="phase-card" style="--c:#b07aa1;--c2:#b07aa1;">
+      <span class="tag">PHASE 03</span>
+      <h4>大規模化・マルチモーダル化</h4>
+      <div class="period">2025 – 2026 ・ LLM・フローマッチング・汎用化</div>
+      <p>Motion-R1 の思考連鎖、Being-M0 の百万規模学習、フローマッチング、Mamba などが競い合う段階です。Motion-X・SnapMoGen で全身・高品質なデータが拡充し、生成・理解・編集を一つに束ねる汎用モーションモデルへと向かっています。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAPERS ===== -->
+<div id="tab-papers" class="tab-content">
+  <div class="section-head"><h2>論文リスト</h2><span class="count" id="papers-total"></span></div>
+  <div class="filter-bar">
+    <div class="search-wrap">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="text" id="search-input" placeholder="タイトル・モデル名・特徴で検索..." oninput="filterPapers()">
+    </div>
+    <select id="filter-year" onchange="filterPapers()">
+      <option value="">全ての年</option>
+      <option value="2016">2016</option><option value="2022">2022</option><option value="2023">2023</option>
+      <option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option>
+    </select>
+    <select id="filter-approach" onchange="filterPapers()">
+      <option value="">全アプローチ</option>
+      <option value="Diffusion">Diffusion</option>
+      <option value="Autoregressive">Autoregressive / VQ</option>
+      <option value="LLM">LLM</option>
+      <option value="Flow Matching">Flow Matching</option>
+      <option value="Masked">Masked Modeling</option>
+      <option value="Retrieval">Retrieval</option>
+      <option value="Transformer">Transformer / その他</option>
+      <option value="Control">Control / Editing</option>
+      <option value="Interaction">Scene / Interaction</option>
+      <option value="Dataset">Dataset</option>
+      <option value="Survey">Survey</option>
+    </select>
+    <select id="filter-venue" onchange="filterPapers()">
+      <option value="">全ての会議</option>
+      <option value="CVPR">CVPR</option><option value="ICCV">ICCV</option><option value="ECCV">ECCV</option>
+      <option value="NeurIPS">NeurIPS</option><option value="ICLR">ICLR</option><option value="ICML">ICML</option>
+      <option value="SIGGRAPH">SIGGRAPH</option><option value="AAAI">AAAI</option><option value="arXiv">arXiv</option>
+    </select>
+  </div>
+  <div class="paper-count" id="paper-count"></div>
+  <div class="table-wrap">
+    <div class="table-scroll">
+    <table id="paper-table">
+      <thead>
+        <tr>
+          <th style="width:60px;" class="sortable" onclick="sortTable('year')">年 ⇅</th>
+          <th style="min-width:300px;">タイトル / モデル</th>
+          <th style="min-width:92px;">会議</th>
+          <th style="min-width:120px;">アプローチ</th>
+          <th style="min-width:130px;">データセット</th>
+          <th style="min-width:240px;">特徴・貢献</th>
+        </tr>
+      </thead>
+      <tbody id="paper-tbody"></tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+<!-- ===== DATASETS ===== -->
+<div id="tab-datasets" class="tab-content">
+  <div class="section-head"><h2>データセット</h2><span class="count" id="ds-total"></span></div>
+  <div class="section-note">テキストとモーションを対応づけたデータセットを、規模・アノテーション方法・身体範囲の観点で整理しました。近年は全身（手・顔を含む）への対応と、テキスト記述の長文化・大規模化が進んでいます。</div>
+  <div class="ds-grid" id="dataset-cards"></div>
+
+  <div class="section-head"><h2>規模の比較</h2></div>
+  <div class="charts-grid">
+    <div class="panel">
+      <h3>モーション数（シーケンス）</h3>
+      <div class="sub">対数スケール・多い順</div>
+      <div class="chart-box" style="height:460px"><canvas id="chart-ds-seqs"></canvas></div>
+    </div>
+    <div class="panel">
+      <h3>テキストアノテーション数</h3>
+      <div class="sub">対数スケール・多い順（テキストなしのデータセットは非表示）</div>
+      <div class="chart-box" style="height:460px"><canvas id="chart-ds-text"></canvas></div>
+    </div>
+    <div class="panel wide">
+      <h3>データセット規模の時系列変化</h3>
+      <div class="sub">KIT（2016, 3.9千）から MotionMillion（2025, 100万）まで・対数スケール</div>
+      <div class="chart-box h-md"><canvas id="chart-ds-timeline"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PERFORMANCE ===== -->
+<div id="tab-performance" class="tab-content">
+  <div class="section-head"><h2>HumanML3D ベンチマーク</h2></div>
+  <div class="section-note">
+    HumanML3D テストセットでの評価結果です。<b>FID・MM-Dist は低いほど良く</b>、<b>R-Precision は高いほど良い</b>指標です（Diversity は実データ値 9.50 に近いほど良好）。
+    数値は各論文の報告値のため、評価条件の違いにより厳密な横並び比較ではない点にご注意ください。
+  </div>
+
+  <div class="panel" style="margin-bottom:18px;">
+    <div class="seg" id="metric-seg">
+      <button class="active" data-metric="fid" onclick="showMetric('fid', this)">FID ↓</button>
+      <button data-metric="rp3" onclick="showMetric('rp3', this)">R-Precision Top-3 ↑</button>
+      <button data-metric="mmdist" onclick="showMetric('mmdist', this)">MM-Dist ↓</button>
+      <button data-metric="div" onclick="showMetric('div', this)">Diversity →</button>
+    </div>
+    <div class="sub" id="metric-caption" style="margin-bottom:14px;"></div>
+    <div class="chart-box h-xl"><canvas id="chart-metric"></canvas></div>
+  </div>
+
+  <div class="table-wrap" style="margin-bottom:18px;">
+    <div class="table-scroll">
+    <table class="perf-table" id="perf-table">
+      <thead>
+        <tr>
+          <th onclick="sortPerf('model')">モデル</th><th onclick="sortPerf('year')">年</th>
+          <th onclick="sortPerf('fid')">FID ↓</th><th onclick="sortPerf('rp1')">R@1 ↑</th>
+          <th onclick="sortPerf('rp2')">R@2 ↑</th><th onclick="sortPerf('rp3')">R@3 ↑</th>
+          <th onclick="sortPerf('mmdist')">MM-Dist ↓</th><th onclick="sortPerf('div')">Diversity →</th>
+          <th onclick="sortPerf('mmmod')">MModality ↑</th>
+        </tr>
+      </thead>
+      <tbody id="perf-tbody"></tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="charts-grid">
+    <div class="panel">
+      <h3>FID の改善推移</h3>
+      <div class="sub">TEMOS 3.73 → MoGenTS 0.03 へ・年代順</div>
+      <div class="chart-box h-md"><canvas id="chart-fid-trend"></canvas></div>
+    </div>
+    <div class="panel">
+      <h3>R-Precision Top-3 の改善推移</h3>
+      <div class="sub">Ground Truth (0.797) への接近</div>
+      <div class="chart-box h-md"><canvas id="chart-rp-trend"></canvas></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-row">
+      <strong>Text-to-Motion Research Survey</strong>
+      <span class="meta">最終更新: <b>2026年6月19日</b></span>
+      <span class="meta">収録: <b>論文124本・データセット24種</b></span>
+      <span class="meta">対象期間: 2016–2026</span>
+    </div>
+    <p class="foot-note">
+      本サイトは、テキスト駆動の人体モーション生成に関する公開情報をもとに編集した非公式のまとめです。
+      各論文の発表先・数値は、arXiv・各国際会議の proceedings・各データセットやプロジェクトの公式ページで確認しています。
+      性能値は各論文の報告値であり、評価条件の違いにより厳密な比較ではない場合があります。誤りや追加すべき文献にお気づきの際はご指摘ください。
+    </p>
+    <p class="foot-note">
+      主な参照:
+      <a href="https://zilize.github.io/awesome-text-to-motion/" target="_blank" rel="noopener noreferrer">awesome-text-to-motion</a> ・
+      <a href="https://arxiv.org/" target="_blank" rel="noopener noreferrer">arXiv</a> ・
+      CVPR / ICCV / ECCV / NeurIPS / ICLR / ICML / SIGGRAPH / AAAI proceedings
+    </p>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
