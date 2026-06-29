@@ -4,11 +4,11 @@
 
 テキストから人体モーションを生成する研究（2016〜2026年6月）を、**論文・データセット・ベンチマーク性能**の3軸で整理した Web アプリです。
 
-- 論文 **124本**（手法・データセット・サーベイ）
+- 論文 **154本**（手法・データセット・サーベイ）
 - データセット **24種**
 - HumanML3D ベンチマーク **19モデル**の性能比較
 
-> 最終更新: **2026年6月19日** ／ 対象期間: 2016–2026
+> 最終更新: **2026年6月29日** ／ 対象期間: 2016–2026
 
 ---
 
@@ -31,7 +31,7 @@ python server.py
 | タブ | 内容 |
 |------|------|
 | **概要** | 年別研究数・会議別・アプローチ別のグラフ、研究3フェーズの解説 |
-| **論文** | 124本を検索／年・アプローチ・会議で絞り込み。各行から arXiv・Project へ |
+| **論文** | 154本を検索／年・アプローチ・会議で絞り込み。各行から arXiv・Project へ |
 | **データセット** | 24種をカード表示（規模・FPS・テキスト数・身体範囲・特徴）＋規模比較チャート |
 | **性能比較** | HumanML3D の FID・R-Precision・MM-Dist・Diversity を指標別に可視化、改善推移グラフ |
 
@@ -41,10 +41,10 @@ python server.py
 
 | カテゴリ | 件数 |
 |----------|------|
-| 手法・モデル論文 | 約115本 |
+| 手法・モデル論文 | 約145本 |
 | データセット論文 | 4本（一覧内） |
 | サーベイ論文 | 5本 |
-| **論文 合計** | **124本** |
+| **論文 合計** | **154本** |
 | データセット | 24種 |
 | ベンチマーク評価モデル | 19モデル |
 | 調査期間 | 2016〜2026年6月 |
@@ -229,6 +229,41 @@ Text-to-Motion-Research/
 - **UniMo** — Unified Motion Generation and Understanding with Chain of Thought. *arXiv 2026*. [arXiv:2601.12126](https://arxiv.org/abs/2601.12126)
 - **LLaMo** — Scaling Pretrained Language Models for Unified Motion Understanding and Generation. *arXiv 2026*. [arXiv:2602.12370](https://arxiv.org/abs/2602.12370)
 - **TriC-Motion** — Tri-Domain Causal Modeling Grounded Text-to-Motion Generation. *arXiv 2026*. [project](https://caoyiyang1105.github.io/TriC-Motion/)
+
+### 追加収録（網羅補完 2026-06-29）
+
+> スタイル制御・統一生成・編集・基礎手法など、関連研究を追加で網羅。
+
+- **MotionGPT3** — Human Motion as a Second Modality. *arXiv 2025*. [arXiv:2506.24086](https://arxiv.org/abs/2506.24086)
+- **AttrMoGen** — Generating Attribute-Aware Human Motions from Textual Prompt. *AAAI 2026*. [arXiv:2506.21912](https://arxiv.org/abs/2506.21912)
+- **MOST** — Motion Diffusion Model for Rare Text via Temporal Clip Banzhaf Interaction. *arXiv 2025*. [arXiv:2507.06590](https://arxiv.org/abs/2507.06590)
+- **X-MoGen** — Unified Motion Generation across Humans and Animals. *arXiv 2025*. [arXiv:2508.05162](https://arxiv.org/abs/2508.05162)
+- **SASI** — Semantically Consistent Text-to-Motion with Unsupervised Styles. *SIGGRAPH 2025*. [project](https://fivezerojun.github.io/stylization.github.io/)
+- **MoLingo** — Motion-Language Alignment for Text-to-Motion Generation. *CVPR 2026*. [arXiv:2512.13840](https://arxiv.org/abs/2512.13840)
+- **IRG-MotionLLM** — Interleaving Motion Generation, Assessment and Refinement. *arXiv 2025*. [arXiv:2512.10730](https://arxiv.org/abs/2512.10730)
+- **OmniMoGen** — Unifying Human Motion Generation via Interleaved Text-Motion Instructions. *arXiv 2025*. [arXiv:2512.19159](https://arxiv.org/abs/2512.19159)
+- **HyperLoRA** — Stylized Text-to-Motion Generation via Hypernetwork-Driven Low-Rank Adaptation. *arXiv 2026*. [arXiv:2605.13333](https://arxiv.org/abs/2605.13333)
+- **CoMoVi** — Co-Generation of 3D Human Motions and Realistic Videos. *arXiv 2026*. [arXiv:2601.10632](https://arxiv.org/abs/2601.10632)
+- **AvatarCLIP** — Zero-Shot Text-Driven Generation and Animation of 3D Avatars. *SIGGRAPH 2022*. [arXiv:2205.08535](https://arxiv.org/abs/2205.08535)
+- **SinMDM** — Single Motion Diffusion. *ICLR 2024*. [arXiv:2302.05905](https://arxiv.org/abs/2302.05905)
+- **AMD** — Autoregressive Motion Diffusion. *AAAI 2024*. [arXiv:2305.09381](https://arxiv.org/abs/2305.09381)
+- **GraphMotion** — Act As You Wish: Fine-Grained Control with Hierarchical Semantic Graphs. *NeurIPS 2023*. [arXiv:2311.01015](https://arxiv.org/abs/2311.01015)
+- **MotionGPT(Z)** — Finetuned LLMs Are General-Purpose Motion Generators. *AAAI 2024*. [arXiv:2306.10900](https://arxiv.org/abs/2306.10900)
+- **TLControl** — Trajectory and Language Control for Human Motion Synthesis. *ECCV 2024*. [arXiv:2311.17135](https://arxiv.org/abs/2311.17135)
+- **B2A-HDM** — Towards Detailed Text-to-Motion Synthesis via Basic-to-Advanced Hierarchical Diffusion Model. *AAAI 2024*. [arXiv:2312.10960](https://arxiv.org/abs/2312.10960)
+- **OMG** — Towards Open-vocabulary Motion Generation via Mixture of Controllers. *CVPR 2024*. [arXiv:2312.08985](https://arxiv.org/abs/2312.08985)
+- **GUESS** — GradUally Enriching SyntheSis for Text-Driven Human Motion Generation. *TVCG 2024*. [arXiv:2401.02142](https://arxiv.org/abs/2401.02142)
+- **STMC** — Multi-Track Timeline Control for Text-Driven 3D Human Motion Generation. *CVPR-W 2024*. [arXiv:2401.08559](https://arxiv.org/abs/2401.08559)
+- **MotionMix** — Weakly-Supervised Diffusion for Controllable Motion Generation. *AAAI 2024*. [arXiv:2401.11115](https://arxiv.org/abs/2401.11115)
+- **CoMo** — Controllable Motion Generation through Language Guided Pose Code Editing. *ECCV 2024*. [arXiv:2403.13900](https://arxiv.org/abs/2403.13900)
+- **LGTM** — Local-to-Global Text-Driven Human Motion Diffusion Model. *SIGGRAPH 2024*. [arXiv:2405.03485](https://arxiv.org/abs/2405.03485)
+- **MotionLLM** — Understanding Human Behaviors from Human Motions and Videos. *arXiv 2024*. [arXiv:2405.20340](https://arxiv.org/abs/2405.20340)
+- **MotionCLR** — Motion Generation and Training-free Editing via Understanding Attention Mechanisms. *arXiv 2024*. [arXiv:2410.18977](https://arxiv.org/abs/2410.18977)
+- **HMIT (LLaMo)** — Human Motion Instruction Tuning. *CVPR 2025*. [arXiv:2411.16805](https://arxiv.org/abs/2411.16805)
+- **VersatileMotion** — A Unified Framework for Motion Synthesis and Comprehension. *arXiv 2024*. [arXiv:2411.17335](https://arxiv.org/abs/2411.17335)
+- **ScaMo** — Exploring the Scaling Law in Autoregressive Motion Generation Model. *arXiv 2024*. [arXiv:2412.14559](https://arxiv.org/abs/2412.14559)
+- **MotionLab** — Unified Human Motion Generation and Editing via the Motion-Condition-Motion Paradigm. *ICCV 2025*. [arXiv:2502.02358](https://arxiv.org/abs/2502.02358)
+- **MotionReFit** — Dynamic Motion Blending for Versatile Motion Editing. *CVPR 2025*. [arXiv:2503.20724](https://arxiv.org/abs/2503.20724)
 
 ### データセット
 

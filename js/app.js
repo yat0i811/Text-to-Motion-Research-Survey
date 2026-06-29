@@ -63,9 +63,9 @@ function initCharts() {
       {label:'データセット', data:YEARS.map(y=>PAPERS.filter(p=>p.year===y&&p.approach==='Dataset').length), backgroundColor:'#9c755f', borderRadius:3, maxBarThickness:48},
       {label:'サーベイ', data:YEARS.map(y=>PAPERS.filter(p=>p.year===y&&p.approach==='Survey').length), backgroundColor:'#bab0ac', borderRadius:3, maxBarThickness:48},
     ]},
-    options:{ responsive:true, maintainAspectRatio:false,
+    options:{ responsive:true, maintainAspectRatio:false, layout:{padding:{top:10}},
       scales:{ x:xAxis({stacked:true, grid:{display:false}}), y:yAxis({stacked:true, ticks:{color:TICK,stepSize:5}}) },
-      plugins:{ legend:{position:'top', align:'end', labels:{usePointStyle:true, pointStyle:'rectRounded', boxWidth:9, padding:16}} } }
+      plugins:{ legend:{position:'top', align:'end', labels:{usePointStyle:true, pointStyle:'rectRounded', boxWidth:11, boxHeight:11, padding:24, font:{size:12.5, weight:'500'}}} } }
   });
 
   // Approach (horizontal sorted with labels)
