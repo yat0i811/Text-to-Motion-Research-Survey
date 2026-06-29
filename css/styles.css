@@ -66,6 +66,9 @@
   .panel.wide { grid-column: 1 / -1; }
   .panel h3 { font-size: 0.96rem; font-weight: 600; letter-spacing: -0.005em; }
   .panel .sub { color: var(--muted); font-size: 0.79rem; margin-top: 2px; margin-bottom: 18px; }
+  .chart-legend { display: flex; flex-wrap: wrap; gap: 10px 20px; margin: 0 0 14px; }
+  .chart-legend .lg-item { display: inline-flex; align-items: center; gap: 7px; font-size: 0.82rem; font-weight: 500; color: #45433f; }
+  .chart-legend .lg-box { width: 13px; height: 13px; border-radius: 3px; flex-shrink: 0; }
   .chart-box { position: relative; }
   .chart-box.h-sm { height: 230px; }
   .chart-box.h-md { height: 290px; }
@@ -139,6 +142,7 @@
   .ap-Survey { background: #eeedeb; color: #5d5b57; }
   .ap-Control { background: #eef0f4; color: #4a5570; }
   .ap-Interaction { background: #edf1ee; color: #4a6a57; }
+  .ap-Related { background: #eef1f3; color: #566570; }
 
   /* ---------- Dataset cards ---------- */
   .ds-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }

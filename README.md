@@ -4,7 +4,7 @@
 
 テキストから人体モーションを生成する研究（2016〜2026年6月）を、**論文・データセット・ベンチマーク性能**の3軸で整理した Web アプリです。
 
-- 論文 **154本**（手法・データセット・サーベイ）
+- 論文 **158本**（手法・データセット・サーベイ）
 - データセット **24種**
 - HumanML3D ベンチマーク **19モデル**の性能比較
 
@@ -31,7 +31,7 @@ python server.py
 | タブ | 内容 |
 |------|------|
 | **概要** | 年別研究数・会議別・アプローチ別のグラフ、研究3フェーズの解説 |
-| **論文** | 154本を検索／年・アプローチ・会議で絞り込み。各行から arXiv・Project へ |
+| **論文** | 158本を検索／年・アプローチ・会議で絞り込み。各行から arXiv・Project へ |
 | **データセット** | 24種をカード表示（規模・FPS・テキスト数・身体範囲・特徴）＋規模比較チャート |
 | **性能比較** | HumanML3D の FID・R-Precision・MM-Dist・Diversity を指標別に可視化、改善推移グラフ |
 
@@ -41,10 +41,11 @@ python server.py
 
 | カテゴリ | 件数 |
 |----------|------|
-| 手法・モデル論文 | 約145本 |
+| 手法・モデル論文 | 約138本 |
+| 関連研究（隣接タスク） | 11本 |
 | データセット論文 | 4本（一覧内） |
 | サーベイ論文 | 5本 |
-| **論文 合計** | **154本** |
+| **論文 合計** | **158本** |
 | データセット | 24種 |
 | ベンチマーク評価モデル | 19モデル |
 | 調査期間 | 2016〜2026年6月 |
@@ -264,6 +265,16 @@ Text-to-Motion-Research/
 - **ScaMo** — Exploring the Scaling Law in Autoregressive Motion Generation Model. *arXiv 2024*. [arXiv:2412.14559](https://arxiv.org/abs/2412.14559)
 - **MotionLab** — Unified Human Motion Generation and Editing via the Motion-Condition-Motion Paradigm. *ICCV 2025*. [arXiv:2502.02358](https://arxiv.org/abs/2502.02358)
 - **MotionReFit** — Dynamic Motion Blending for Versatile Motion Editing. *CVPR 2025*. [arXiv:2503.20724](https://arxiv.org/abs/2503.20724)
+
+### 関連研究（隣接タスク: 動物・ダンス・ジェスチャ・理解 ほか）
+
+> テキスト駆動モーション生成と直接は重ならない隣接領域。サイトでは「関連研究 (Related)」区分で表示・絞り込みできます。
+> 既出の **AvatarCLIP / SinMDM / EgoLM / MotionLLM / HMIT(LLaMo) / X-MoGen / CoMoVi** も同区分に再分類しています。
+
+- **OmniMotionGPT** — Animal Motion Generation with Limited Data（テキスト→動物モーション）. *CVPR 2024*. [arXiv:2311.18303](https://arxiv.org/abs/2311.18303)
+- **EDGE** — Editable Dance Generation From Music（音楽→ダンス）. *CVPR 2023*. [arXiv:2211.10658](https://arxiv.org/abs/2211.10658)
+- **Lodge** — A Coarse to Fine Diffusion Network for Long Dance Generation（音楽→ダンス）. *CVPR 2024*. [arXiv:2403.10518](https://arxiv.org/abs/2403.10518)
+- **EMAGE** — Unified Holistic Co-Speech Gesture Generation（音声→ジェスチャ）. *CVPR 2024*. [arXiv:2401.00374](https://arxiv.org/abs/2401.00374)
 
 ### データセット
 

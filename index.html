@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Text-to-Motion Research Survey（2016–2026）</title>
-<meta name="description" content="テキストから人体モーションを生成する研究（2016年〜2026年6月）のサーベイ。論文134本・データセット24種・HumanML3Dベンチマークをグラフで可視化。">
+<meta name="description" content="テキストから人体モーションを生成する研究（2016年〜2026年6月）のサーベイ。論文158本・データセット24種・HumanML3Dベンチマークをグラフで可視化。">
 <meta name="author" content="Text-to-Motion Research Survey">
 <meta name="last-modified" content="2026-06-29">
 <meta property="og:title" content="Text-to-Motion Research Survey（2016–2026）">
@@ -54,6 +54,8 @@
 
   <div class="panel wide" style="margin-bottom:18px;">
     <h3>年別の研究数</h3>
+    <div class="sub">モデル手法・データセット・サーベイ・関連研究の年次推移</div>
+    <div class="chart-legend" id="legend-timeline"></div>
     <div class="chart-box h-md"><canvas id="chart-timeline"></canvas></div>
   </div>
 
@@ -122,6 +124,7 @@
       <option value="Transformer">Transformer / その他</option>
       <option value="Control">Control / Editing</option>
       <option value="Interaction">Scene / Interaction</option>
+      <option value="Related">関連研究 (Related)</option>
       <option value="Dataset">Dataset</option>
       <option value="Survey">Survey</option>
     </select>
@@ -236,7 +239,7 @@
       <strong>Text-to-Motion Research Survey</strong>
       <a class="meta" href="https://yat0i811.github.io/Text-to-Motion-Research-Survey/" target="_blank" rel="noopener noreferrer">yat0i811.github.io/Text-to-Motion-Research-Survey</a>
       <span class="meta">最終更新: <b>2026年6月29日</b></span>
-      <span class="meta">収録: <b>論文134本・データセット24種</b></span>
+      <span class="meta">収録: <b>論文158本・データセット24種</b></span>
       <span class="meta">対象期間: 2016–2026</span>
     </div>
     <p class="foot-note">
