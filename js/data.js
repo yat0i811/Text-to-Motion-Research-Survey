@@ -211,6 +211,13 @@ const PAPERS = [
   {year:2026, title:"EasyTune: Efficient Step-Aware Fine-Tuning for Diffusion-Based Motion Generation", model:"EasyTune", venue:"ICLR 2026", approach:"Diffusion", datasets:["HumanML3D"], contrib:"各デノイズ段階で微調整するステップ認識RLで整合・省メモリ・高速化を両立", arxiv:"https://arxiv.org/abs/2602.07967", project:"https://xiaofeng-tan.github.io/projects/EasyTune/index.html"},
   {year:2026, title:"MoRL: Reinforced Reasoning for Unified Motion Understanding and Generation", model:"MoRL", venue:"arXiv", approach:"LLM", datasets:["HumanML3D","KIT"], contrib:"検証可能報酬のRLと Chain-of-Motion で理解・生成を統一。CoT データを構築", arxiv:"https://arxiv.org/abs/2602.14534", project:"https://aigeeksgroup.github.io/MoRL/"},
   {year:2026, title:"TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control", model:"TextOp", venue:"arXiv", approach:"Related", datasets:[], contrib:"ストリーミング言語指令に応じ、ヒューマノイドロボットの動作をリアルタイム生成・制御", arxiv:"https://arxiv.org/abs/2602.07439", project:""},
+
+  // ── 追加調査分⑧: 2026年 追加調査 ──
+  {year:2026, title:"T2M Mamba: Motion Periodicity-Saliency Coupling for Stable Text-Driven Motion Generation", model:"T2M-Mamba", venue:"arXiv", approach:"Transformer", datasets:["HumanML3D","KIT"], contrib:"運動の周期性とキーフレーム顕著性を結合し、言い換え文にも頑健な Mamba ベース生成", arxiv:"https://arxiv.org/abs/2602.01352", project:""},
+  {year:2026, title:"LaMoGen: Language to Motion Generation Through LLM-Guided Symbolic Inference", model:"LaMoGen", venue:"arXiv", approach:"LLM", datasets:["HumanML3D"], contrib:"ラバノーテーション風の記号列へ LLM が動作を分解し解釈可能に生成。専用ベンチマークも提案", arxiv:"https://arxiv.org/abs/2603.11605", project:""},
+  {year:2026, title:"Motion-Adapter: A Diffusion Model Adapter for Text-to-Motion Generation of Compound Actions", model:"Motion-Adapter", venue:"arXiv", approach:"Control", datasets:["HumanML3D"], contrib:"分離クロスアテンションのプラグイン型アダプタで複合動作を統合・編集（詳細指定不要）", arxiv:"https://arxiv.org/abs/2604.16135", project:""},
+  {year:2026, title:"MotionBricks: Scalable Real-Time Motions with Modular Latent Generative Model and Smart Primitives", model:"MotionBricks", venue:"arXiv", approach:"Related", datasets:[], contrib:"35万超クリップで学習するモジュール型潜在生成。速度・スタイル・キーフレーム制御のリアルタイム生成（NVIDIA・非テキスト）", arxiv:"https://arxiv.org/abs/2604.24833", project:"https://nvlabs.github.io/motionbricks/"},
+  {year:2026, title:"Stability-Driven Motion Generation for Object-Guided Human-Human Co-Manipulation", model:"StabCoManip", venue:"arXiv", approach:"Related", datasets:[], contrib:"物体アフォーダンスと安定性駆動シミュレーションのフローマッチングで2人協調運搬動作を生成（非テキスト）", arxiv:"https://arxiv.org/abs/2604.20336", project:""},
 ];
 
 const DATASETS = [

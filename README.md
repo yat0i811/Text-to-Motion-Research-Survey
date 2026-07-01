@@ -4,7 +4,7 @@
 
 テキストから人体モーションを生成する研究（2016〜2026年6月）を、**論文・データセット・ベンチマーク性能**の3軸で整理した Web アプリです。
 
-- 論文 **181本**（手法・データセット・サーベイ）
+- 論文 **186本**（手法・データセット・サーベイ）
 - データセット **24種**
 - HumanML3D ベンチマーク **19モデル**の性能比較
 
@@ -31,7 +31,7 @@ python server.py
 | タブ | 内容 |
 |------|------|
 | **概要** | 年別研究数・会議別・アプローチ別のグラフ、研究3フェーズの解説 |
-| **論文** | 181本を検索／年・アプローチ・会議で絞り込み。各行から arXiv・Project へ |
+| **論文** | 186本を検索／年・アプローチ・会議で絞り込み。各行から arXiv・Project へ |
 | **データセット** | 24種をカード表示（規模・FPS・テキスト数・身体範囲・特徴）＋規模比較チャート |
 | **性能比較** | HumanML3D の FID・R-Precision・MM-Dist・Diversity を指標別に可視化、改善推移グラフ |
 
@@ -41,11 +41,11 @@ python server.py
 
 | カテゴリ | 件数 |
 |----------|------|
-| 手法・モデル論文 | 約155本 |
-| 関連研究（隣接タスク） | 17本 |
+| 手法・モデル論文 | 約158本 |
+| 関連研究（隣接タスク） | 19本 |
 | データセット論文 | 4本（一覧内） |
 | サーベイ論文 | 5本 |
-| **論文 合計** | **181本** |
+| **論文 合計** | **186本** |
 | 対象年 | 2017〜2026（2016年以前のKIT含む・グラフは「〜2021」に集約） |
 | データセット | 24種 |
 | ベンチマーク評価モデル | 19モデル |
@@ -288,6 +288,9 @@ Text-to-Motion-Research/
 - **HY-Motion 1.0** — Scaling Flow Matching Models for Text-To-Motion Generation. *arXiv 2025*. [arXiv:2512.23464](https://arxiv.org/abs/2512.23464)
 - **EasyTune** — Efficient Step-Aware Fine-Tuning for Diffusion-Based Motion Generation. *ICLR 2026*. [arXiv:2602.07967](https://arxiv.org/abs/2602.07967)
 - **MoRL** — Reinforced Reasoning for Unified Motion Understanding and Generation. *arXiv 2026*. [arXiv:2602.14534](https://arxiv.org/abs/2602.14534)
+- **T2M-Mamba** — Motion Periodicity-Saliency Coupling for Stable Text-Driven Motion Generation. *arXiv 2026*. [arXiv:2602.01352](https://arxiv.org/abs/2602.01352)
+- **LaMoGen** — Language to Motion Generation Through LLM-Guided Symbolic Inference. *arXiv 2026*. [arXiv:2603.11605](https://arxiv.org/abs/2603.11605)
+- **Motion-Adapter** — A Diffusion Model Adapter for Text-to-Motion Generation of Compound Actions. *arXiv 2026*. [arXiv:2604.16135](https://arxiv.org/abs/2604.16135)
 
 ### 関連研究（隣接タスク: 動物・ダンス・ジェスチャ・理解 ほか）
 
@@ -304,6 +307,8 @@ Text-to-Motion-Research/
 - **DanceRevolution** — Long-Term Dance Generation with Music via Curriculum Learning（音楽→ダンス）. *ICLR 2021*. [arXiv:2006.06119](https://arxiv.org/abs/2006.06119)
 - **ChoreoMaster** — Choreography-Oriented Music-Driven Dance Synthesis（音楽→ダンス）. *SIGGRAPH 2021*. [project](https://netease-gameai.github.io/ChoreoMaster/)
 - **TextOp** — Real-time Interactive Text-Driven Humanoid Robot Motion Generation（ロボット）. *arXiv 2026*. [arXiv:2602.07439](https://arxiv.org/abs/2602.07439)
+- **MotionBricks** — Scalable Real-Time Motions with Modular Latent Generative Model（速度・スタイル・キーフレーム制御, 非テキスト・NVIDIA）. *arXiv 2026*. [arXiv:2604.24833](https://arxiv.org/abs/2604.24833)
+- **StabCoManip** — Stability-Driven Motion Generation for Object-Guided Human-Human Co-Manipulation（2人協調運搬・非テキスト）. *arXiv 2026*. [arXiv:2604.20336](https://arxiv.org/abs/2604.20336)
 
 ### データセット
 
