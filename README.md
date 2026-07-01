@@ -4,11 +4,11 @@
 
 テキストから人体モーションを生成する研究（2016〜2026年6月）を、**論文・データセット・ベンチマーク性能**の3軸で整理した Web アプリです。
 
-- 論文 **158本**（手法・データセット・サーベイ）
+- 論文 **181本**（手法・データセット・サーベイ）
 - データセット **24種**
 - HumanML3D ベンチマーク **19モデル**の性能比較
 
-> 最終更新: **2026年6月29日** ／ 対象期間: 2016–2026
+> 最終更新: **2026年7月1日** ／ 対象期間: 2016–2026
 
 ---
 
@@ -31,7 +31,7 @@ python server.py
 | タブ | 内容 |
 |------|------|
 | **概要** | 年別研究数・会議別・アプローチ別のグラフ、研究3フェーズの解説 |
-| **論文** | 158本を検索／年・アプローチ・会議で絞り込み。各行から arXiv・Project へ |
+| **論文** | 181本を検索／年・アプローチ・会議で絞り込み。各行から arXiv・Project へ |
 | **データセット** | 24種をカード表示（規模・FPS・テキスト数・身体範囲・特徴）＋規模比較チャート |
 | **性能比較** | HumanML3D の FID・R-Precision・MM-Dist・Diversity を指標別に可視化、改善推移グラフ |
 
@@ -41,11 +41,12 @@ python server.py
 
 | カテゴリ | 件数 |
 |----------|------|
-| 手法・モデル論文 | 約138本 |
-| 関連研究（隣接タスク） | 11本 |
+| 手法・モデル論文 | 約155本 |
+| 関連研究（隣接タスク） | 17本 |
 | データセット論文 | 4本（一覧内） |
 | サーベイ論文 | 5本 |
-| **論文 合計** | **158本** |
+| **論文 合計** | **181本** |
+| 対象年 | 2017〜2026（2016年以前のKIT含む・グラフは「〜2021」に集約） |
 | データセット | 24種 |
 | ベンチマーク評価モデル | 19モデル |
 | 調査期間 | 2016〜2026年6月 |
@@ -91,6 +92,15 @@ Text-to-Motion-Research/
 
 > 形式: **モデル/略称** — 論文タイトル. *発表先 年*. arXiv:ID
 > （会議名の年は採択年。年見出しは arXiv 初出年。`—` は arXiv 未登録）
+
+### 初期研究（2017–2021・グラフでは「〜2021」に集約）
+
+- **Text2Action** — Generative Adversarial Synthesis from Language to Action. *ICRA 2018*. [arXiv:1710.05298](https://arxiv.org/abs/1710.05298)
+- **Motion↔Lang RNN (Plappert ら)** — Learning a Bidirectional Mapping between Human Whole-body Motion and Natural Language using Deep RNNs. *RAS 2018*. [arXiv:1705.06400](https://arxiv.org/abs/1705.06400)
+- **JL2P** — Language2Pose: Natural Language Grounded Pose Forecasting. *3DV 2019*. [arXiv:1907.01108](https://arxiv.org/abs/1907.01108)
+- **Ghosh et al.** — Synthesis of Compositional Animations from Textual Descriptions. *ICCV 2021*. [arXiv:2103.14675](https://arxiv.org/abs/2103.14675)
+
+> 同時期の隣接研究（Action2Motion / Text2Gestures / AI Choreographer(FACT) / DanceRevolution / ChoreoMaster）は「関連研究」区分に収録。
 
 ### サーベイ
 
@@ -265,6 +275,19 @@ Text-to-Motion-Research/
 - **ScaMo** — Exploring the Scaling Law in Autoregressive Motion Generation Model. *arXiv 2024*. [arXiv:2412.14559](https://arxiv.org/abs/2412.14559)
 - **MotionLab** — Unified Human Motion Generation and Editing via the Motion-Condition-Motion Paradigm. *ICCV 2025*. [arXiv:2502.02358](https://arxiv.org/abs/2502.02358)
 - **MotionReFit** — Dynamic Motion Blending for Versatile Motion Editing. *CVPR 2025*. [arXiv:2503.20724](https://arxiv.org/abs/2503.20724)
+- **LAMD** — Local Action-Guided Motion Diffusion Model for Text-to-Motion Generation. *ECCV 2024*. [arXiv:2407.10528](https://arxiv.org/abs/2407.10528)
+- **FTMoMamba** — Motion Generation with Frequency and Text State Space Models. *arXiv 2024*. [arXiv:2411.17532](https://arxiv.org/abs/2411.17532)
+- **BiPO** — Bidirectional Partial Occlusion Network for Text-to-Motion Synthesis. *arXiv 2024*. [arXiv:2412.00112](https://arxiv.org/abs/2412.00112)
+- **RMD** — Training-free Retrieval-Augmented Motion Diffuse. *arXiv 2024*. [arXiv:2412.04343](https://arxiv.org/abs/2412.04343)
+- **EnergyMoGen** — Compositional Human Motion Generation with Energy-Based Diffusion in Latent Space. *CVPR 2025*. [arXiv:2412.14706](https://arxiv.org/abs/2412.14706)
+- **MOGO** — Residual Quantized Hierarchical Causal Transformer for Real-Time 3D Human Motion Generation. *arXiv 2025*. [arXiv:2506.05952](https://arxiv.org/abs/2506.05952)
+- **PlanMoGPT** — Flow-Enhanced Progressive Planning for Text to Motion Synthesis. *arXiv 2025*. [arXiv:2506.17912](https://arxiv.org/abs/2506.17912)
+- **MotionFlux** — Efficient Text-Guided Motion Generation through Rectified Flow Matching and Preference Alignment. *arXiv 2025*. [arXiv:2508.19527](https://arxiv.org/abs/2508.19527)
+- **MoGIC** — Boosting Motion Generation via Intention Understanding and Visual Context. *arXiv 2025*. [arXiv:2510.02722](https://arxiv.org/abs/2510.02722)
+- **Text2Interact** — High-Fidelity and Diverse Text-to-Two-Person Interaction Generation. *arXiv 2025*. [arXiv:2510.06504](https://arxiv.org/abs/2510.06504)
+- **HY-Motion 1.0** — Scaling Flow Matching Models for Text-To-Motion Generation. *arXiv 2025*. [arXiv:2512.23464](https://arxiv.org/abs/2512.23464)
+- **EasyTune** — Efficient Step-Aware Fine-Tuning for Diffusion-Based Motion Generation. *ICLR 2026*. [arXiv:2602.07967](https://arxiv.org/abs/2602.07967)
+- **MoRL** — Reinforced Reasoning for Unified Motion Understanding and Generation. *arXiv 2026*. [arXiv:2602.14534](https://arxiv.org/abs/2602.14534)
 
 ### 関連研究（隣接タスク: 動物・ダンス・ジェスチャ・理解 ほか）
 
@@ -275,6 +298,12 @@ Text-to-Motion-Research/
 - **EDGE** — Editable Dance Generation From Music（音楽→ダンス）. *CVPR 2023*. [arXiv:2211.10658](https://arxiv.org/abs/2211.10658)
 - **Lodge** — A Coarse to Fine Diffusion Network for Long Dance Generation（音楽→ダンス）. *CVPR 2024*. [arXiv:2403.10518](https://arxiv.org/abs/2403.10518)
 - **EMAGE** — Unified Holistic Co-Speech Gesture Generation（音声→ジェスチャ）. *CVPR 2024*. [arXiv:2401.00374](https://arxiv.org/abs/2401.00374)
+- **Action2Motion** — Conditioned Generation of 3D Human Motions（行動条件・テキスト非依存）. *ACM MM 2020*. [arXiv:2007.15240](https://arxiv.org/abs/2007.15240)
+- **Text2Gestures** — Transformer Network for Emotive Body Gestures（文→ジェスチャ）. *IEEE VR 2021*. [arXiv:2101.11101](https://arxiv.org/abs/2101.11101)
+- **FACT (AI Choreographer)** — Music Conditioned 3D Dance Generation with AIST++（音楽→ダンス）. *ICCV 2021*. [arXiv:2101.08779](https://arxiv.org/abs/2101.08779)
+- **DanceRevolution** — Long-Term Dance Generation with Music via Curriculum Learning（音楽→ダンス）. *ICLR 2021*. [arXiv:2006.06119](https://arxiv.org/abs/2006.06119)
+- **ChoreoMaster** — Choreography-Oriented Music-Driven Dance Synthesis（音楽→ダンス）. *SIGGRAPH 2021*. [project](https://netease-gameai.github.io/ChoreoMaster/)
+- **TextOp** — Real-time Interactive Text-Driven Humanoid Robot Motion Generation（ロボット）. *arXiv 2026*. [arXiv:2602.07439](https://arxiv.org/abs/2602.07439)
 
 ### データセット
 

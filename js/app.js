@@ -9,7 +9,8 @@ const PALETTE = {
   Masked:"#edc948", Retrieval:"#e15759", Transformer:"#f28e2b", Control:"#637a9f",
   Interaction:"#6a9a7b", Related:"#9aa7b1", Dataset:"#9c755f", Survey:"#8c8c8c",
 };
-const YEARS = [2016,2022,2023,2024,2025,2026];
+const YEARS = ['〜2021',2022,2023,2024,2025,2026];
+const yb = y => (y<=2021 ? '〜2021' : y); // year bucket: group 2016–2021 as 〜2021
 const APPROACHES = ["Diffusion","Autoregressive","LLM","Flow Matching","Masked","Retrieval","Transformer","Control","Interaction","Related","Dataset","Survey"];
 const TAB10 = ['#4e79a7','#f28e2b','#e15759','#76b7b2','#59a14f','#edc948','#b07aa1','#ff9da7','#9c755f','#637a9f'];
 
@@ -64,10 +65,10 @@ function initCharts() {
 
   // Timeline (stacked vertical) — legend rendered as HTML above the chart
   const tlSeries = [
-    {label:'モデル手法',   color:'#4e79a7', data:YEARS.map(y=>models.filter(p=>p.year===y).length)},
-    {label:'データセット', color:'#9c755f', data:YEARS.map(y=>PAPERS.filter(p=>p.year===y&&p.approach==='Dataset').length)},
-    {label:'サーベイ',     color:'#bab0ac', data:YEARS.map(y=>PAPERS.filter(p=>p.year===y&&p.approach==='Survey').length)},
-    {label:'関連研究',     color:PALETTE.Related, data:YEARS.map(y=>PAPERS.filter(p=>p.year===y&&p.approach==='Related').length)},
+    {label:'モデル手法',   color:'#4e79a7', data:YEARS.map(y=>models.filter(p=>yb(p.year)===y).length)},
+    {label:'データセット', color:'#9c755f', data:YEARS.map(y=>PAPERS.filter(p=>yb(p.year)===y&&p.approach==='Dataset').length)},
+    {label:'サーベイ',     color:'#bab0ac', data:YEARS.map(y=>PAPERS.filter(p=>yb(p.year)===y&&p.approach==='Survey').length)},
+    {label:'関連研究',     color:PALETTE.Related, data:YEARS.map(y=>PAPERS.filter(p=>yb(p.year)===y&&p.approach==='Related').length)},
   ];
   renderHtmlLegend('legend-timeline', tlSeries);
   charts.timeline = new Chart(document.getElementById('chart-timeline'), {
@@ -103,7 +104,7 @@ function initCharts() {
   // Stacked trend
   charts.stacked = new Chart(document.getElementById('chart-stacked'), {
     type:'bar',
-    data:{ labels:YEARS, datasets:APPROACHES.map(a=>({ label:a, data:YEARS.map(y=>PAPERS.filter(p=>p.year===y&&p.approach===a).length), backgroundColor:PALETTE[a], borderRadius:2, maxBarThickness:66 }))},
+    data:{ labels:YEARS, datasets:APPROACHES.map(a=>({ label:a, data:YEARS.map(y=>PAPERS.filter(p=>yb(p.year)===y&&p.approach===a).length), backgroundColor:PALETTE[a], borderRadius:2, maxBarThickness:66 }))},
     options:{ responsive:true, maintainAspectRatio:false,
       scales:{ x:xAxis({stacked:true, grid:{display:false}}), y:yAxis({stacked:true, ticks:{color:TICK,stepSize:5}}) },
       plugins:{ legend:{position:'bottom', labels:{usePointStyle:true, pointStyle:'rectRounded', boxWidth:9, padding:11, font:{size:10.5}}} } }
@@ -260,7 +261,7 @@ function filterPapers() {
   const venue=document.getElementById('filter-venue').value;
   filtered=PAPERS.filter(p=>{
     if(q && !p.title.toLowerCase().includes(q) && !p.model.toLowerCase().includes(q) && !p.contrib.toLowerCase().includes(q)) return false;
-    if(yr && String(p.year)!==yr) return false;
+    if(yr){ if(yr==='pre2021'){ if(p.year>2021) return false; } else if(String(p.year)!==yr) return false; }
     if(app && p.approach!==app) return false;
     if(venue && !p.venue.includes(venue)) return false;
     return true;
