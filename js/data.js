@@ -218,6 +218,8 @@ const PAPERS = [
   {year:2026, title:"Motion-Adapter: A Diffusion Model Adapter for Text-to-Motion Generation of Compound Actions", model:"Motion-Adapter", venue:"arXiv", approach:"Control", datasets:["HumanML3D"], contrib:"分離クロスアテンションのプラグイン型アダプタで複合動作を統合・編集（詳細指定不要）", arxiv:"https://arxiv.org/abs/2604.16135", project:""},
   {year:2026, title:"MotionBricks: Scalable Real-Time Motions with Modular Latent Generative Model and Smart Primitives", model:"MotionBricks", venue:"arXiv", approach:"Related", datasets:[], contrib:"35万超クリップで学習するモジュール型潜在生成。速度・スタイル・キーフレーム制御のリアルタイム生成（NVIDIA・非テキスト）", arxiv:"https://arxiv.org/abs/2604.24833", project:"https://nvlabs.github.io/motionbricks/"},
   {year:2026, title:"Stability-Driven Motion Generation for Object-Guided Human-Human Co-Manipulation", model:"StabCoManip", venue:"arXiv", approach:"Related", datasets:[], contrib:"物体アフォーダンスと安定性駆動シミュレーションのフローマッチングで2人協調運搬動作を生成（非テキスト）", arxiv:"https://arxiv.org/abs/2604.20336", project:""},
+  {year:2026, title:"ScaleMoGen: Autoregressive Next-Scale Prediction for Human Motion Generation", model:"ScaleMoGen", venue:"arXiv", approach:"Autoregressive", datasets:["HumanML3D","SnapMoGen"], contrib:"骨格・時間の多スケールへ量子化し、次スケールを自己回帰予測。HumanML3D で FID 0.030（学習不要編集も可, SNU/Snap/Meta）", arxiv:"https://arxiv.org/abs/2605.11704", project:""},
+  {year:2026, title:"Towards Continual Motion-Language Agents: LoRA Variants for Incremental Motion Understanding and Generation", model:"CMLA", venue:"arXiv", approach:"LLM", datasets:["HumanML3D"], contrib:"LoRA＋MoE ルータで忘却を抑えつつ新概念を逐次学習。理解(M2T)と生成(T2M)を継続学習で統一", arxiv:"https://arxiv.org/abs/2606.30266", project:""},
 ];
 
 const DATASETS = [
