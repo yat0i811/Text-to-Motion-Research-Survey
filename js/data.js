@@ -253,6 +253,7 @@ const DATASETS = [
   // ── 日本のデータセット・日本語アノテーション（jp:true で別枠表示）──
   {name:"AIST++ / AIST Dance DB", year:2021, venue:"ICCV", seqs:1408, duration:"5.2h", frames:"~1.1M", fps:60, texts:0, avgLen:"音楽連動（テキストなし）", body:"全身", annotation:"音楽・ジャンル・カメラ姿勢", access:"公開", feature:"日本の産業技術総合研究所（AIST／産総研）が構築した AIST Dance DB 由来の音楽連動3Dダンス。10ジャンル・1,408シーケンス。音楽駆動モーション生成の代表的ベンチマーク。", repr:"SMPL / 3D関節", color:"#d4a017", jp:true},
   {name:"BEAT", year:2022, venue:"ECCV", seqs:1762, duration:"76h", frames:"~8.2M", fps:30, texts:1762, avgLen:"会話文＋意味・感情", body:"全身＋顔・手（SMPL-X）", annotation:"音声・テキスト・感情8種・意味・話者ID", access:"公開", feature:"30話者・4言語（英・中・西・日）・8感情の会話ジェスチャ。フレーム単位の感情/意味アノテーション付き。日本語収録を約2時間含む多言語データ。", repr:"SMPL-X（音声同期, 120Hz→30Hz）", color:"#a05195", jp:true},
+  {name:"Bandai-Namco-Research Motiondataset", year:2023, venue:"arXiv", seqs:3077, duration:"~3.9h", frames:"421,604", fps:30, texts:0, avgLen:"内容×スタイルのラベル", body:"全身", annotation:"内容(content)＋スタイル(style)ラベル", access:"公開（GitHub）", feature:"バンダイナムコ研究所が自社mocapスタジオで収録・公開。3名の俳優による日常/格闘/ダンス等の内容×15/7スタイル。Dataset-1（175clip）＋Dataset-2（2,902clip）。日本語READMEあり・BVH形式。スタイル転写／編集向け。", repr:"BVH（関節回転）", color:"#c1502e", jp:true},
 ];
 
 const PERF_DATA = [
