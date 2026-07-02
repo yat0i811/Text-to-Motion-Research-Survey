@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Text-to-Motion Research Survey（2016–2026）</title>
-<meta name="description" content="テキストから人体モーションを生成する研究（2016年〜2026年6月）のサーベイ。論文188本・データセット24種・HumanML3Dベンチマークをグラフで可視化。">
+<meta name="description" content="テキストから人体モーションを生成する研究（2016年〜2026年6月）のサーベイ。論文188本・データセット25種・HumanML3Dベンチマークをグラフで可視化。">
 <meta name="author" content="Text-to-Motion Research Survey">
 <meta name="last-modified" content="2026-07-01">
 <meta property="og:title" content="Text-to-Motion Research Survey（2016–2026）">
@@ -161,16 +161,20 @@
   <div class="section-note">テキストとモーションを対応づけたデータセットを、規模・アノテーション方法・身体範囲の観点で整理しました。近年は全身（手・顔を含む）への対応と、テキスト記述の長文化・大規模化が進んでいます。</div>
   <div class="ds-grid" id="dataset-cards"></div>
 
+  <div class="section-head" style="margin-top:26px;"><h2>日本のデータセット・日本語アノテーション</h2></div>
+  <div class="section-note">日本発のデータセットや、日本語アノテーションを含むデータセットを別枠でまとめました。なお標準ベンチマークの <b>KIT Motion-Language</b> も、記述文が元来<b>日本語で作成され英訳</b>された経緯を持ちます（上のカードに併記）。</div>
+  <div class="ds-grid" id="dataset-cards-jp"></div>
+
   <div class="section-head"><h2>規模の比較</h2></div>
   <div class="charts-grid">
     <div class="panel">
       <h3>モーション数（シーケンス）</h3>
-      <div class="sub">対数スケール・多い順</div>
+      <div class="sub">シーケンス数の多い順・対数スケール（実数を併記）</div>
       <div class="chart-box" style="height:460px"><canvas id="chart-ds-seqs"></canvas></div>
     </div>
     <div class="panel">
       <h3>テキストアノテーション数</h3>
-      <div class="sub">対数スケール・多い順（テキストなしのデータセットは非表示）</div>
+      <div class="sub">テキスト数の多い順・対数スケール（実数を併記・テキストなしは非表示）</div>
       <div class="chart-box" style="height:460px"><canvas id="chart-ds-text"></canvas></div>
     </div>
     <div class="panel wide">
@@ -239,7 +243,7 @@
       <strong>Text-to-Motion Research Survey</strong>
       <a class="meta" href="https://yat0i811.github.io/Text-to-Motion-Research-Survey/" target="_blank" rel="noopener noreferrer">yat0i811.github.io/Text-to-Motion-Research-Survey</a>
       <span class="meta">最終更新: <b>2026年7月1日</b></span>
-      <span class="meta">収録: <b>論文188本・データセット24種</b></span>
+      <span class="meta">収録: <b>論文188本・データセット25種</b></span>
       <span class="meta">対象期間: 2016–2026</span>
     </div>
     <p class="foot-note">

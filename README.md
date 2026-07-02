@@ -5,7 +5,7 @@
 テキストから人体モーションを生成する研究（2016〜2026年6月）を、**論文・データセット・ベンチマーク性能**の3軸で整理した Web アプリです。
 
 - 論文 **188本**（手法・データセット・サーベイ）
-- データセット **24種**
+- データセット **25種**
 - HumanML3D ベンチマーク **19モデル**の性能比較
 
 > 最終更新: **2026年7月1日** ／ 対象期間: 2016–2026
@@ -32,7 +32,7 @@ python server.py
 |------|------|
 | **概要** | 年別研究数・会議別・アプローチ別のグラフ、研究3フェーズの解説 |
 | **論文** | 188本を検索／年・アプローチ・会議で絞り込み。各行から arXiv・Project へ |
-| **データセット** | 24種をカード表示（規模・FPS・テキスト数・身体範囲・特徴）＋規模比較チャート |
+| **データセット** | 25種をカード表示（規模・FPS・テキスト数・身体範囲・特徴）＋規模比較チャート。日本のデータセット・日本語アノテーションは別枠 |
 | **性能比較** | HumanML3D の FID・R-Precision・MM-Dist・Diversity を指標別に可視化、改善推移グラフ |
 
 ---
@@ -47,7 +47,7 @@ python server.py
 | サーベイ論文 | 5本 |
 | **論文 合計** | **188本** |
 | 対象年 | 2017〜2026（2016年以前のKIT含む・グラフは「〜2021」に集約） |
-| データセット | 24種 |
+| データセット | 25種（うち日本関連 2種を別枠表示） |
 | ベンチマーク評価モデル | 19モデル |
 | 調査期間 | 2016〜2026年6月 |
 
@@ -338,6 +338,12 @@ Text-to-Motion-Research/
 - **SnapMoGen** (2025, *NeurIPS*) — Human Motion Generation from Expressive Texts. [arXiv:2507.09122](https://arxiv.org/abs/2507.09122)
 - **Motion-X++** (2025, *arXiv*) — Large-Scale Multimodal 3D Whole-body Motion Dataset. [arXiv:2501.05098](https://arxiv.org/abs/2501.05098)
 - **MotionMillion** (2025, *ICCV*) — Million-scale data (Go to Zero). [arXiv:2507.07095](https://arxiv.org/abs/2507.07095)
+
+### 日本のデータセット・日本語アノテーション（別枠表示）
+
+- **AIST++ / AIST Dance DB** (2021, *ICCV*) — 日本の産業技術総合研究所（AIST／産総研）が構築した音楽連動3Dダンス。[arXiv:2101.08779](https://arxiv.org/abs/2101.08779) ・ [AIST Dance DB](https://aistdancedb.ongaaccel.jp/)
+- **BEAT** (2022, *ECCV*) — 30話者・4言語（英・中・西・**日**）・8感情の会話ジェスチャ。日本語収録を約2時間含む。[arXiv:2203.05297](https://arxiv.org/abs/2203.05297)
+- **KIT Motion-Language**（上のデータセット一覧に掲載）— 記述文は元来**日本語で作成され英訳**された経緯を持つ。[arXiv:1607.03827](https://arxiv.org/abs/1607.03827)
 
 ---
 

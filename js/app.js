@@ -110,14 +110,18 @@ function initCharts() {
       plugins:{ legend:{position:'bottom', labels:{usePointStyle:true, pointStyle:'rectRounded', boxWidth:9, padding:11, font:{size:10.5}}} } }
   });
 
-  // Dataset seqs / text (horizontal log)
-  const dsBar = (id, key, fmt) => new Chart(document.getElementById(id), {
-    type:'bar',
-    data:{ labels:DATASETS.map(d=>d.name), datasets:[{ data:DATASETS.map(d=>d[key]), backgroundColor:DATASETS.map(d=>d.color), borderRadius:3, maxBarThickness:18 }]},
-    options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false,
-      scales:{ x:xAxis({type:'logarithmic', ticks:{color:TICK, callback:v=>{const s=v.toString(); return /^[1-9]0*$/.test(s)?(v>=1000?v/1000+'k':v):''; }}}), y:yAxis({grid:{display:false}, ticks:{color:'#45433f', font:{size:10}}}) },
-      plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>fmt(c.parsed.x)}} } }
-  });
+  // Dataset seqs / text (horizontal log, sorted high→low with value labels)
+  const kfmt = v => v>=1e6 ? +(v/1e6).toFixed(v>=1e7?0:1)+'M' : v>=1e3 ? +(v/1e3).toFixed(v>=1e4?0:1)+'k' : String(v);
+  const dsBar = (id, key, fmt) => {
+    const rows = DATASETS.filter(d=>d[key]>0).slice().sort((a,b)=>b[key]-a[key]);
+    return new Chart(document.getElementById(id), {
+      type:'bar',
+      data:{ labels:rows.map(d=>d.name), datasets:[{ data:rows.map(d=>d[key]), backgroundColor:rows.map(d=>d.color), borderRadius:3, maxBarThickness:18 }]},
+      options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, layout:{padding:{right:52}},
+        scales:{ x:xAxis({type:'logarithmic', ticks:{color:TICK, callback:v=>{const s=v.toString(); return /^[1-9]0*$/.test(s)?(v>=1000?v/1000+'k':v):''; }}}), y:yAxis({grid:{display:false}, ticks:{color:'#45433f', font:{size:10}}}) },
+        plugins:{ legend:{display:false}, valLabels:{on:true, fmt:kfmt}, tooltip:{callbacks:{label:c=>fmt(c.parsed.x)}} } }
+    });
+  };
   charts.dsSeqs = dsBar('chart-ds-seqs','seqs', v=>v.toLocaleString()+' シーケンス');
   charts.dsText = dsBar('chart-ds-text','texts', v=>v.toLocaleString()+' テキスト');
 
@@ -271,8 +275,8 @@ function filterPapers() {
 function sortTable(key){ if(sortKey===key) sortDir*=-1; else {sortKey=key; sortDir=-1;} filterPapers(); }
 
 // ===================== DATASETS =====================
-function renderDatasets() {
-  document.getElementById('dataset-cards').innerHTML=DATASETS.map(d=>`
+function dsCard(d) {
+  return `
     <div class="ds-card">
       <div class="ds-head" style="--c:${d.color};">
         <h4>${d.name}</h4>
@@ -293,7 +297,12 @@ function renderDatasets() {
         <hr class="ds-divider">
         <div class="ds-feature">${d.feature}</div>
       </div>
-    </div>`).join('');
+    </div>`;
+}
+function renderDatasets() {
+  document.getElementById('dataset-cards').innerHTML=DATASETS.filter(d=>!d.jp).map(dsCard).join('');
+  const jpEl=document.getElementById('dataset-cards-jp');
+  if(jpEl) jpEl.innerHTML=DATASETS.filter(d=>d.jp).map(dsCard).join('');
 }
 
 // ===================== TABS =====================

@@ -223,7 +223,7 @@ const PAPERS = [
 ];
 
 const DATASETS = [
-  {name:"KIT Motion-Language", year:2016, venue:"Big Data", seqs:3911, duration:"11.2h", frames:"~0.5M", fps:12.5, texts:6278, avgLen:"8語", body:"上半身中心", annotation:"手動アノテーション", access:"公開", feature:"最初の大規模テキスト×モーション対応データセット。原データは100Hz収録だが、Text-to-Motion では HumanML3D 処理版（12.5fps）が標準。", repr:"関節角度・位置", color:"#4e79a7"},
+  {name:"KIT Motion-Language", year:2016, venue:"Big Data", seqs:3911, duration:"11.2h", frames:"~0.5M", fps:12.5, texts:6278, avgLen:"8語", body:"上半身中心", annotation:"手動アノテーション（日本語起源→英訳）", access:"公開", feature:"最初の大規模テキスト×モーション対応データセット。原データは100Hz収録だが、Text-to-Motion では HumanML3D 処理版（12.5fps）が標準。記述文は元来日本語で作成され英訳された経緯を持つ。", repr:"関節角度・位置", color:"#4e79a7"},
   {name:"HumanML3D", year:2022, venue:"CVPR", seqs:14616, duration:"28.6h", frames:"~3.9M", fps:20, texts:44970, avgLen:"12語", body:"全身（下半身中心）", annotation:"手動（3文/シーケンス）", access:"公開", feature:"AMASS + HumanAct12 を元に作成。最も広く使われる標準ベンチマーク。人手による多様な自然言語記述。", repr:"264次元特徴量（速度・位置・回転）", color:"#e15759"},
   {name:"Motion-X", year:2023, venue:"NeurIPS", seqs:81100, duration:"~144h", frames:"15.6M", fps:30, texts:81100, avgLen:"15語", body:"全身（SMPL-X: 手・顔）", annotation:"自動＋手動ハイブリッド", access:"公開", feature:"最大規模の全身モーションデータセット。表情・手指・体全体の精密アノテーション。フレームレベルのポーズ記述付き。", repr:"SMPL-X パラメータ", color:"#59a14f"},
   {name:"InterHuman", year:2023, venue:"IJCV", seqs:7779, duration:"~6.6h", frames:"~1.2M", fps:30, texts:23337, avgLen:"18語", body:"2人・全身", annotation:"手動アノテーション", access:"公開", feature:"InterGen が公開した2人相互作用データセット。格闘・ダンス・協調動作など人–人インタラクションに特化。", repr:"2体分の関節表現", color:"#76b7b2"},
@@ -244,12 +244,15 @@ const DATASETS = [
   {name:"Nymeria", year:2024, venue:"ECCV", seqs:1200, duration:"300h", frames:"~", fps:30, texts:301500, avgLen:"8.64M語", body:"全身＋一人称", annotation:"階層的言語記述＋一人称センサ", access:"公開（Project Aria）", feature:"世界最大級の野外モーション言語データ。300時間・264名・301.5K文。一人称映像・視線・IMU同期。", repr:"SMPL＋一人称マルチセンサ", color:"#7b8b9a"},
 
   // ── HOI・ダンス・スタイル系（隣接・関連データセット）──
-  {name:"AIST++", year:2021, venue:"ICCV", seqs:1408, duration:"5.2h", frames:"~1.1M", fps:60, texts:0, avgLen:"音楽連動（テキストなし）", body:"全身", annotation:"音楽・ジャンル・カメラ姿勢", access:"公開", feature:"音楽連動3Dダンスの標準データ。10ジャンル・1,408シーケンス。音楽駆動モーション生成の代表的ベンチマーク。", repr:"SMPL / 3D関節", color:"#d4a017"},
   {name:"GRAB", year:2020, venue:"ECCV", seqs:1334, duration:"~3.8h", frames:"~1.6M", fps:120, texts:0, avgLen:"物体把持（テキストなし）", body:"全身＋手（SMPL-X）", annotation:"把持意図（use/pass/lift/off-hand）", access:"公開", feature:"10被験者×51物体の全身把持モーション。手指まで精密。人–物体インタラクション生成の基礎データ。", repr:"SMPL-X＋物体メッシュ", color:"#6b8e9e"},
   {name:"BEHAVE", year:2022, venue:"CVPR", seqs:321, duration:"~", frames:"~15K(注釈)", fps:30, texts:0, avgLen:"物体接触（テキストなし）", body:"全身＋物体", annotation:"接触＋SMPL/物体フィット", access:"公開", feature:"8被験者×20物体×5環境の321系列。多視点RGBD＋3D接触注釈。屋内HOI追跡の先駆け。", repr:"SMPL＋物体6DoF", color:"#a87c9f"},
   {name:"100STYLE", year:2022, venue:"SIGGRAPH", seqs:1000, duration:"~19h", frames:"4.78M", fps:60, texts:0, avgLen:"100スタイル（ラベル）", body:"全身", annotation:"100スタイル×10動作", access:"公開", feature:"100種の歩行スタイル・約478万フレーム。スタイル転写・スタイル付きモーション生成の標準データ。", repr:"BVH / 関節", color:"#c98a5e"},
   {name:"HIMO", year:2024, venue:"ECCV", seqs:3376, duration:"~", frames:"4.08M", fps:30, texts:3376, avgLen:"全体＋分割", body:"全身＋手", annotation:"詳細テキスト＋時系列分割", access:"公開", feature:"全身×複数物体のインタラクション。3.3K系列・408万フレーム。全体／分割テキストの2種で細粒度制御を評価。", repr:"SMPL-X＋複数物体", color:"#5b9279"},
   {name:"TRUMANS", year:2024, venue:"CVPR", seqs:1000, duration:"15h+", frames:"1.6M", fps:30, texts:0, avgLen:"行動・接触注釈", body:"全身（SMPL-X）＋シーン", annotation:"接触・行動・物体動態", access:"公開", feature:"最大級の人–シーン相互作用mocap。100屋内シーン・20物体・160万フレーム。一人称RGBD付き。", repr:"SMPL-X＋シーン", color:"#7e8aa2"},
+
+  // ── 日本のデータセット・日本語アノテーション（jp:true で別枠表示）──
+  {name:"AIST++ / AIST Dance DB", year:2021, venue:"ICCV", seqs:1408, duration:"5.2h", frames:"~1.1M", fps:60, texts:0, avgLen:"音楽連動（テキストなし）", body:"全身", annotation:"音楽・ジャンル・カメラ姿勢", access:"公開", feature:"日本の産業技術総合研究所（AIST／産総研）が構築した AIST Dance DB 由来の音楽連動3Dダンス。10ジャンル・1,408シーケンス。音楽駆動モーション生成の代表的ベンチマーク。", repr:"SMPL / 3D関節", color:"#d4a017", jp:true},
+  {name:"BEAT", year:2022, venue:"ECCV", seqs:1762, duration:"76h", frames:"~8.2M", fps:30, texts:1762, avgLen:"会話文＋意味・感情", body:"全身＋顔・手（SMPL-X）", annotation:"音声・テキスト・感情8種・意味・話者ID", access:"公開", feature:"30話者・4言語（英・中・西・日）・8感情の会話ジェスチャ。フレーム単位の感情/意味アノテーション付き。日本語収録を約2時間含む多言語データ。", repr:"SMPL-X（音声同期, 120Hz→30Hz）", color:"#a05195", jp:true},
 ];
 
 const PERF_DATA = [
