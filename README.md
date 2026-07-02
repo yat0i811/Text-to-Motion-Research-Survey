@@ -5,7 +5,7 @@
 テキストから人体モーションを生成する研究（2016〜2026年6月）を、**論文・データセット・ベンチマーク性能**の3軸で整理した Web アプリです。
 
 - 論文 **188本**（手法・データセット・サーベイ）
-- データセット **26種**
+- データセット **27種**
 - HumanML3D ベンチマーク **19モデル**の性能比較
 
 > 最終更新: **2026年7月1日** ／ 対象期間: 2016–2026
@@ -32,7 +32,7 @@ python server.py
 |------|------|
 | **概要** | 年別研究数・会議別・アプローチ別のグラフ、研究3フェーズの解説 |
 | **論文** | 188本を検索／年・アプローチ・会議で絞り込み。各行から arXiv・Project へ |
-| **データセット** | 26種をカード表示（規模・FPS・テキスト数・身体範囲・特徴）＋規模比較チャート。日本のデータセット・日本語アノテーションは別枠 |
+| **データセット** | 27種をカード表示（規模・FPS・テキスト数・身体範囲・特徴）＋規模比較チャート。日本のデータセット・日本語アノテーションは別枠 |
 | **性能比較** | HumanML3D の FID・R-Precision・MM-Dist・Diversity を指標別に可視化、改善推移グラフ |
 
 ---
@@ -47,7 +47,7 @@ python server.py
 | サーベイ論文 | 5本 |
 | **論文 合計** | **188本** |
 | 対象年 | 2017〜2026（2016年以前のKIT含む・グラフは「〜2021」に集約） |
-| データセット | 26種（うち日本関連 3種を別枠表示） |
+| データセット | 27種（うち日本関連 3種を別枠表示） |
 | ベンチマーク評価モデル | 19モデル |
 | 調査期間 | 2016〜2026年6月 |
 
@@ -338,6 +338,7 @@ Text-to-Motion-Research/
 - **SnapMoGen** (2025, *NeurIPS*) — Human Motion Generation from Expressive Texts. [arXiv:2507.09122](https://arxiv.org/abs/2507.09122)
 - **Motion-X++** (2025, *arXiv*) — Large-Scale Multimodal 3D Whole-body Motion Dataset. [arXiv:2501.05098](https://arxiv.org/abs/2501.05098)
 - **MotionMillion** (2025, *ICCV*) — Million-scale data (Go to Zero). [arXiv:2507.07095](https://arxiv.org/abs/2507.07095)
+- **BONES-SEED** (2026, *Bones Studio*) — ヒューマノイドロボット向けマルチモーダルモーション。14.2万アニメ・~288h・120fps・最大6文/モーション。Kimodo の学習にも使用（主学習データは非公開の Bones Rigplay 700h）。[HuggingFace](https://huggingface.co/datasets/bones-studio/seed) ・ [Bones Studio](https://bones.studio/datasets/seed)
 
 ### 日本のデータセット・日本語アノテーション（別枠表示）
 
