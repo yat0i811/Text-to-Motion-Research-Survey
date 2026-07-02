@@ -129,8 +129,8 @@ function initCharts() {
   charts.dsTimeline = new Chart(document.getElementById('chart-ds-timeline'), {
     type:'line',
     data:{ labels:['2016','2019','2021','2022','2023','2024','2025'], datasets:[
-      {label:'シーケンス数', data:[3911,11265,13220,14616,81100,1200000,1000000], borderColor:'#4e79a7', backgroundColor:'rgba(78,121,167,0.08)', fill:true, tension:0.35, pointRadius:4, pointBackgroundColor:'#4e79a7', borderWidth:2},
-      {label:'テキスト数', data:[6278,null,91000,44970,81100,1200000,1000000], borderColor:'#e15759', backgroundColor:'rgba(225,87,89,0.05)', fill:true, tension:0.35, pointRadius:4, pointBackgroundColor:'#e15759', borderWidth:2, spanGaps:true},
+      {label:'シーケンス数', data:[3911,11265,13220,14616,81100,1200000,2000000], borderColor:'#4e79a7', backgroundColor:'rgba(78,121,167,0.08)', fill:true, tension:0.35, pointRadius:4, pointBackgroundColor:'#4e79a7', borderWidth:2},
+      {label:'テキスト数', data:[6278,null,91000,44970,81100,1200000,2000000], borderColor:'#e15759', backgroundColor:'rgba(225,87,89,0.05)', fill:true, tension:0.35, pointRadius:4, pointBackgroundColor:'#e15759', borderWidth:2, spanGaps:true},
     ]},
     options:{ responsive:true, maintainAspectRatio:false,
       scales:{ x:xAxis({grid:{display:false}}), y:yAxis({type:'logarithmic', ticks:{color:TICK, callback:v=>{const s=v.toString(); return /^[1-9]0*$/.test(s)?(v>=1000?v/1000+'k':v):''; }}}) },
